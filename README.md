@@ -23,7 +23,7 @@ Simply run the builder and it will fetch the needed dependencies and install the
 Watch the YouTube video below!
 (Click the image below)
 
-[<img align="center" src="https://user-images.githubusercontent.com/76016636/129282435-3fb34471-c880-433b-8910-da9ce7925cab.png" width="100%">](https://www.youtube.com/watch?v=VWjTkefaSHQ)
+[<img align="center" src="https://user-images.githubusercontent.com/76016636/129282435-3fb34471-c880-433b-8910-da9ce7925cab.png">](https://www.youtube.com/watch?v=VWjTkefaSHQ)
 
 # Support
 Create an issue, or message me on discord.
