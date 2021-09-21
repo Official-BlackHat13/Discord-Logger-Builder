@@ -78,7 +78,7 @@ def clear():
 # The builder that uses pyinstaller
 def build():
     check = subprocess.getoutput("pyinstaller")
-    if "'pyinstaller' not recognized" in check:
+    if "'pyinstaller' is not recognized" in check:
         print(Fore.RED + Style.BRIGHT + "[-] PyInstaller was not found. Attempting to install.")
         tryInstall = subprocess.getoutput("pip install pyinstaller")
         print(Fore.GREEN + Style.BRIGHT + "[+] PyInstaller has been successfully installed.")
