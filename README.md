@@ -21,6 +21,6 @@ py builder.py
 
 Simply run the builder and it will fetch the needed dependencies and install them.<br>
 Video on how to use the script coming soon.
-
+https://youtu.be/VWjTkefaSHQ
 # Support
 Create an issue, or message me on discord.
