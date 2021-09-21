@@ -23,18 +23,18 @@ for name in modulesToInstall:
     if name == "alive_progress":
         try:
             exec("from alive_progress import alive_bar")
-        except ImportError:
+        except ModuleNotFoundError:
             setup("alive-progress")
             exec("from alive_progress import alive_bar")
     elif name == "colorama":
         try:
             exec("from colorama import Fore, Style, init")
-        except ImportError:
+        except ModuleNotFoundError:
             setup("colorama")
             exec("from colorama import Fore, Style, init")
     try:
         exec("import " + name)
-    except ImportError:
+    except ModuleNotFoundError:
         setup(name)
         exec("import " + name)
 
@@ -169,7 +169,7 @@ def requirements():
                     exec(f"import {module}")
                     print(Fore.YELLOW + Style.BRIGHT + f"[+] Module {module} is already installed. Continuing.")
                     bar()
-            except ImportError:
+            except ModuleNotFoundError:
                 if module == "Pillow":
                     install("Pillow")
                     bar()
