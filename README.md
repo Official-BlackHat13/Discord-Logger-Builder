@@ -17,13 +17,3 @@ py builder.py
 ## Usage
 
 Simply run the builder and it will fetch the needed dependencies and install them. Then the script will prompt you for the configuration and after the configuration is over it will ask if you want to compile to an executable. 
-
-## Need help?
-
-Watch the YouTube video below!
-(Click the image below)
-
-[<img align="center" src="https://user-images.githubusercontent.com/76016636/129282435-3fb34471-c880-433b-8910-da9ce7925cab.png">](https://www.youtube.com/watch?v=VWjTkefaSHQ)
-
-# Support
-Create an issue, or message me on discord.
