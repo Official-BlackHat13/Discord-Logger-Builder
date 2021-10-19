@@ -80,7 +80,7 @@ def build():
     check = subprocess.getoutput("pyinstaller")
     if "'pyinstaller' is not recognized" in check:
         print(Fore.RED + Style.BRIGHT + "[-] PyInstaller was not found. Attempting to install.")
-        tryInstall = subprocess.getoutput("python -m pip install pyinstaller")
+        tryInstall = subprocess.getoutput("pip install pyinstaller")
         print(Fore.GREEN + Style.BRIGHT + "[+] PyInstaller has been successfully installed.")
     else:
         print(Fore.GREEN + Style.BRIGHT + "[+] PyInstaller is already installed.")
