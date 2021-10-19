@@ -136,7 +136,7 @@ def requirements():
     # Installs any modules not alraedy installed
     def install(module: str):
         print(Fore.RED + Style.BRIGHT + f"[-] Module '{module}' was not found. Attempting to install.")
-        attempt = subprocess.getoutput(f"python -m pip install {module}")
+        attempt = subprocess.getoutput(f"pip install {module}")
         if "'pip' not recognized" in attempt:
             print(Fore.RED + Style.BRIGHT + "[-] Pip was not found.")
             exit()
