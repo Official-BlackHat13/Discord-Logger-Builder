@@ -15,6 +15,13 @@ cd Discord-Logger-Builder
 py builder.py
 ```
 Or you can clone with GitHub Desktop, Open Command prompt, then `py builder.py`.
+
 ## Usage
 
 Simply run the builder and it will fetch the needed dependencies and install them. Then the script will prompt you for the configuration and after the configuration is over it will ask if you want to compile to an executable. If yes, it will output an exe in the EXE folder.
+
+## Troubleshooting
+
+If you get an error:
+Uninstall typing (python -m pip remove typing) and try again.
+If still not working, before [making an issue](https://github.com/qualk/Discord-Logger-Builder/issues/new), [check](https://github.com/qualk/Discord-Logger-Builder/issues) if there is an existing issue that relates to yours.
