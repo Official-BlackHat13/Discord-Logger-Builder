@@ -14,7 +14,7 @@ git clone https://github.com/qualk/Discord-Logger-Builder.git
 cd Discord-Logger-Builder
 py builder.py
 ```
-Or you can clone with GitHub Desktop, open Command prompt, then `py builder.py`.
+Or you can [clone with GitHub Desktop](x-github-client://openRepo/https://github.com/qualk/Discord-Logger-Builder), open Command prompt, then `py builder.py`.
 
 ## Usage
 
